@@ -15,7 +15,6 @@
 
   const Bacon = React.createClass({
       render: function () {
-        //uses .name property to pass in the Bacon name=''
         return(<h3>this.props.name</h3>);
       }
   });
@@ -26,18 +25,15 @@
   );
 
 
-//using state
-
-//Create a button that updates a count every click
 class Button extends React.Component {
   constructor(props){
     super(props);
-    this.state = {  //Creating the condition or "state" and the button's value
+    this.state = {
       count: 0,
     };
   }
 
-updateCount() { //updates the count by selecting the "previous state" and adding one even if it has been selected elsewhere
+updateCount() {
   this.setState((prevState, props)) => {
     return { count: prevState.count +1 }
 
@@ -46,10 +42,9 @@ updateCount() { //updates the count by selecting the "previous state" and adding
 
 render() {
   return (<button onClick = {() => this.updateCount()}
-    //Uses onclick event handling to call a function this.updateCount
+
     >
     Clicked {this.state.count} times
-    //Displays "Clicked '' Times depending on the amount of times button is clicked
     </button>);
 }
 }
